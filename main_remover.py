@@ -46,6 +46,9 @@ def remove_main(file_path):
 
 if __name__ == "__main__":
     count = 0
+    if len(sys.argv) < 2:
+        print(bcolors.FAIL + "Please specify file/folder to use. " + bcolors.ENDC + " (usage: removette <path>)")
+        exit(-1)
     path = sys.argv[1]
     if os.path.isdir(path):
         for root, dirs, files in os.walk(path, topdown=False):
